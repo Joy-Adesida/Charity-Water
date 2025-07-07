@@ -1,2 +1,291 @@
-# Charity-Water
-# charity_water_landing_page.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charity: Water Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Proxima Nova', Arial, sans-serif;
+      background-color: #003366; /* Use the sampled blue */
+      color: #fff7e1;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: right;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background-image: url('hero.png'); /* Updated to use hero.png */
+      background-size: 80%;
+      background-position: right;
+      background-repeat: no-repeat;
+      padding: 60px 40px;
+      box-sizing: border-box;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 23, 45, 0.95) 40%, rgba(0, 23, 45, 0.2) 100%);
+      z-index: 1;
+    }
+  
+
+    .text-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-top: -20px; /* Move content higher */
+    }
+
+    .logo {
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+  height: 19px; /* or adjust as needed */
+  width: auto;  /* keeps the aspect ratio */
+  display: block;
+}
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.19em;
+      color: #fff7e1;
+    }
+
+    .subheading {
+      color: #77a8bb;
+      font-size: .98em;
+      margin-bottom: 3.5em;
+    }
+
+    .body-text {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #fff7e1;
+      margin-bottom: 100px; /* Add or increase this value */
+    }
+
+    .cta-button {
+      margin-top: 2px;
+    }
+
+    .cta-button a {
+      text-decoration: none;
+      color: #fff7e1;
+      background-color: #003366;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button a:hover {
+      background-color: #fff7e1;
+    }
+
+    .cta-bar {
+  background-color: #fff7e1;
+  padding: 5px 8px;         /* Minimal padding for a tight fit */
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: center;
+}
+
+.cta-bar .cta-button a {
+  background-color: #003366;
+  color: #fff7e1;
+}
+
+.thank-you-message {
+    color: #003366;
+    font-size: 1.3em;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Add or update your existing media query for responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    min-height: 100vh;
+    background: none;
+  }
+  .custom-bg-half {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 58%;
+    background: 
+      linear-gradient(to bottom, rgba(0,51,102,0.5), #003366 100%),
+      url('Ipad_and_phone_hero.jpg') center top no-repeat;
+    background-size: contain;
+    z-index: 0;
+  }
+  .custom-bg-bottom {
+    position: absolute;
+    top: 60%vh; left: 0;
+    width: 100%;
+    height: 60%vh;
+    background: #003366;
+    z-index: 0;
+  }
+  .overlay {
+    display: none;
+  }
+  .text-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 55vh;
+    background: none;
+    max-width: 90vw;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 8px;
+    background-size: cover;
+    background-position: center;
+    min-height: unset;
+  }
+  .text-content {
+    max-width: 100vw;
+    margin-top: 60%;
+    text-align: left;
+  }
+  .logo img {
+    height: 16px;
+  }
+  p {
+    font-size: .7em;
+  }
+  .body-text {
+    font-size: 0.97em;
+    margin-bottom: 32px;
+  }
+  .cta-bar {
+    width: 100%;
+    justify-content: right;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px 2vw;
+  }
+  .logo img {
+    height: 12px;
+  }
+  h1 {
+    font-size: 1.9em;
+  }
+  .cta-bar {
+    padding: 4px 2px;
+    border-radius: 3px;
+  }
+  .cta-button a {
+    padding: 8px 12px;
+    font-size: 0.95em;
+  }
+  .hero-section::after {
+  content: "url('Ipad_and_phone_hero.jpg')";
+  position: absolute;
+  bottom: 0;
+  height: 100px; /* Adjust height of transition zone */
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #003366 100%);
+  backdrop-filter: blur(4px); /* subtle blur */
+  pointer-events: none;
+  z-index: 0;
+}
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Add these two divs for the custom background and overlay -->
+    <div class="custom-bg-half"></div>
+    <div class="custom-bg-bottom"></div>
+    <div class="overlay"></div>
+    <div class="text-content">
+      <div class="logo">
+  <img src="charity_water_logo.png" alt="Charity Water logo">
+      </div>
+      <h1>Change a Life Today—<br>Create Waves for Tomorrow</h1>
+      <p class="subheading">Hear their stories, see the impact you make, and help bring clean water to communities around the world—one drop at a time.</p>
+      <p class="body-text">
+        At Charity: Water, we build lasting water systems—like wells, tap stands, and piped networks—and use real-time sensors to ensure every community has reliable, ongoing access to clean water. 
+        With full transparency and inspiring stories from the people you’re helping, you’ll see exactly how your monthly gift makes a difference:
+        
+        $10 gives 3 people clean water for a year,
+        $20 helps 6—as your support grows, so does your impact.
+      </p>
+      <div class="cta-bar" id="cta-bar">
+  <div class="cta-button" id="cta-button">
+    <a href="#" id="cta-btn">Join us</a>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+  function handleCtaClick(e) {
+    e.preventDefault();
+    // Confetti bursts
+    confetti({
+      particleCount: 200,
+      spread: 90,
+      origin: { y: 0.7 }
+    });
+    setTimeout(function() {
+      confetti({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+    }, 200);
+
+    // Replace button with centered thank you message
+    ctaBar.innerHTML = '<div class="thank-you-message">Thank you!</div>';
+    ctaBar.style.justifyContent = 'center';
+
+    // After 6 seconds, switch back to the Join us button
+    setTimeout(function() {
+      ctaBar.innerHTML = `
+        <div class="cta-button" id="cta-button">
+          <a href="#" id="cta-btn">Join us</a>
+        </div>
+      `;
+      ctaBar.style.justifyContent = 'flex-end';
+      // Re-attach the event listener to the new button
+      document.getElementById('cta-btn').addEventListener('click', handleCtaClick);
+    }, 2000); // 6 seconds
+  }
+
+  const ctaBar = document.getElementById('cta-bar');
+  document.getElementById('cta-btn').addEventListener('click', handleCtaClick);
+</script>
+</body>
+</html>
