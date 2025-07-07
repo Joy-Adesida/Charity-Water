@@ -98,7 +98,7 @@
   margin-top: 10px;
   display: flex;
   justify-content: flex-end; /* Aligns content to the right */
-  align-items: right;
+  align-items: center;
 }
 
 .cta-bar .cta-button a {
@@ -118,7 +118,7 @@
 }
 
 /* Add or update your existing media query for responsiveness */
-@media (max-width: 1640px) {
+@media (max-width: 1024px) {
   .container {
     position: relative;
     flex-direction: column;
@@ -130,8 +130,8 @@
   .custom-bg-half {
     position: absolute;
     top: 0; left: 0;
-    width: auto;
-    height: 60%vh;
+    width: 100%;
+    height: 58%;
     background: 
       linear-gradient(to bottom, rgba(0,51,102,0.5), #003366 100%),
       url('Ipad_and_phone_hero.jpg') center top no-repeat;
@@ -140,9 +140,9 @@
   }
   .custom-bg-bottom {
     position: absolute;
-    top: 50vh; left: 0;
+    top: 60%vh; left: 0;
     width: 100%;
-    height: 50vh;
+    height: 60%vh;
     background: #003366;
     z-index: 0;
   }
@@ -168,28 +168,6 @@
     background-position: center;
     min-height: unset;
   }
-   .custom-bg-half {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 50vh;
-    background: 
-      linear-gradient(to bottom, rgba(0,51,102,0.5), #003366 100%),
-      url('Ipad_and_phone_hero.jpg') center top no-repeat;
-    background-size: contain;
-    z-index: 0;
-  }
-  .custom-bg-bottom {
-    position: absolute;
-    top: 50vh; left: 0;
-    width: 100%;
-    height: 50vh;
-    background: #003366;
-    z-index: 0;
-  }
-  .overlay {
-    display: none;
-  }
   .text-content {
     max-width: 100vw;
     margin-top: 60%;
@@ -198,11 +176,11 @@
   .logo img {
     height: 16px;
   }
-  h1 {
-    font-size: 2.2em;
+  p {
+    font-size: .7em;
   }
   .body-text {
-    font-size: 0.95em;
+    font-size: 0.97em;
     margin-bottom: 32px;
   }
   .cta-bar {
@@ -220,7 +198,7 @@
     height: 12px;
   }
   h1 {
-    font-size: .7 em;
+    font-size: 1.9em;
   }
   .cta-bar {
     padding: 4px 2px;
@@ -243,7 +221,7 @@
       <div class="logo">
   <img src="charity_water_logo.png" alt="Charity Water logo">
       </div>
-      <h1>Change a Life Today —<br>Create Waves for Tomorrow</h1>
+      <h1>Change a Life Today—<br>Create Waves for Tomorrow</h1>
       <p class="subheading">Hear their stories, see the impact you make, and help bring clean water to communities around the world—one drop at a time.</p>
       <p class="body-text">
         At Charity: Water, we build lasting water systems—like wells, tap stands, and piped networks—and use real-time sensors to ensure every community has reliable, ongoing access to clean water. 
