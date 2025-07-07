@@ -173,7 +173,7 @@
     ctaBar.innerHTML = '<div class="thank-you-message">Thank you!</div>';
     ctaBar.style.justifyContent = 'center';
 
-    // After 2 seconds, switch back to the Join us button
+    // After 6 seconds, switch back to the Join us button
     setTimeout(function() {
       ctaBar.innerHTML = `
         <div class="cta-button" id="cta-button">
@@ -183,7 +183,7 @@
       ctaBar.style.justifyContent = 'flex-end';
       // Re-attach the event listener to the new button
       document.getElementById('cta-btn').addEventListener('click', handleCtaClick);
-    }, 10000);
+    }, 2000); // 6 seconds
   }
 
   const ctaBar = document.getElementById('cta-bar');
