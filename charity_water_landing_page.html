@@ -6,21 +6,22 @@
   <title>Charity: Water Landing Page</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #00172D;
-      color: white;
-    }
+  margin: 0;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  background-color: #22507a; /* Use the sampled blue */
+  color: #fff7e1;
+}
+
 
     .container {
       position: relative;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: right;
       justify-content: flex-start;
       min-height: 100vh;
-      background-image: url('https://via.placeholder.com/800x600'); /* Replace with actual hero image */
-      background-size: cover;
+      background-image:url('hero.jpg'); /* Replace with actual hero image */
+      background-size: 80%;
       background-position: right;
       background-repeat: no-repeat;
       padding: 60px 40px;
@@ -35,11 +36,13 @@
       background: linear-gradient(to right, rgba(0, 23, 45, 0.95) 40%, rgba(0, 23, 45, 0.2) 100%);
       z-index: 1;
     }
+  
 
     .text-content {
       position: relative;
       z-index: 2;
       max-width: 600px;
+      margin-top: -20px; /* Move content higher */
     }
 
     .logo {
@@ -47,35 +50,36 @@
     }
 
     .logo img {
-      height: 20px;
-    }
-
+  height: 20px; /* or adjust as needed */
+  width: auto;  /* keeps the aspect ratio */
+  display: block;
+}
     h1 {
       font-size: 2.5em;
-      margin-bottom: 0.5em;
-      color: #ffffff;
+      margin-bottom: 0.19em;
+      color: #fff7e1;
     }
 
     .subheading {
-      color: #b0c4de;
-      font-size: 1em;
+      color: #77a8bb;
+      font-size: .98em;
       margin-bottom: 2em;
     }
 
     .body-text {
       font-size: 1.1em;
       line-height: 1.6;
-      color: #e0eaf5;
+      color: #fff7e1;
     }
 
     .cta-button {
-      margin-top: 30px;
+      margin-top: 2px;
     }
 
     .cta-button a {
       text-decoration: none;
-      background-color: #ffffff;
-      color: #001f3f;
+      color: #fff7e1;
+      background-color: #003366;
       padding: 12px 24px;
       font-weight: bold;
       border-radius: 6px;
@@ -84,8 +88,23 @@
     }
 
     .cta-button a:hover {
-      background-color: #f0f0f0;
+      background-color: #fff7e1;
     }
+
+    .cta-bar {
+  background-color: #fff7e1;
+  padding: 5px 8px;         /* Minimal padding for a tight fit */
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: center;
+}
+
+.cta-bar .cta-button a {
+  background-color: #003366;
+  color: #fff7e1;
+}
 
     @media (max-width: 768px) {
       .container {
@@ -98,12 +117,11 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <div class="overlay"></div>
     <div class="text-content">
       <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Charity_Water_logo.svg" alt="Charity Water logo">
+  <img src="charity_water_logo.png" alt="Charity Water logo">
       </div>
       <h1>Change a Life Today —<br>Create Waves for Tomorrow</h1>
       <p class="subheading">Hear their stories, see the impact you make, and <strong>help bring clean water</strong> to communities around the world—one drop at a time.</p>
@@ -114,9 +132,11 @@
         <strong>$10 gives 3 people clean water for a year,</strong><br>
         <strong>$20 helps 6</strong>—and as your support grows, so does your impact.
       </p>
-      <div class="cta-button">
-        <a href="#">Join us</a>
-      </div>
+      <div class="cta-bar">
+  <div class="cta-button">
+    <a href="#">Join us</a>
+  </div>
+</div>
     </div>
   </div>
 
